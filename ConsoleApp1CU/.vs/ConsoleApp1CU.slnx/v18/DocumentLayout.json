@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\ConsoleApp1CU\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1B2E9EDF-BB0E-16A4-CE1D-CA3CB84C968A}|ConsoleApp1CU.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\consoleapp1cu\\footballer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B2E9EDF-BB0E-16A4-CE1D-CA3CB84C968A}|ConsoleApp1CU.csproj|solutionrelative:footballer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B2E9EDF-BB0E-16A4-CE1D-CA3CB84C968A}|ConsoleApp1CU.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\consoleapp1cu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B2E9EDF-BB0E-16A4-CE1D-CA3CB84C968A}|ConsoleApp1CU.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\ConsoleApp1CU\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\ConsoleApp1CU\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAABkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T06:20:11.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Footballer.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\ConsoleApp1CU\\Footballer.cs",
+              "RelativeDocumentMoniker": "Footballer.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\ConsoleApp1CU\\Footballer.cs",
+              "RelativeToolTip": "Footballer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T06:00:03.685Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
