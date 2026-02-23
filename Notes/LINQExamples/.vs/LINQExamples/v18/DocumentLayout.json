@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Notes\\LINQExamples\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2B4A6B65-E3AC-1DA0-5C48-A9B899AFD2A7}|LINQExamples.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\notes\\linqexamples\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B4A6B65-E3AC-1DA0-5C48-A9B899AFD2A7}|LINQExamples.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Notes\\LINQExamples\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Notes\\LINQExamples\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T07:07:31.806Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
