@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week4---26_Jan_26 to 31_Jan_26\\28_Jan_26\\PatientsList\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A93DC0A9-2821-342E-80D1-310EE15E439F}|PatientsList.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week4---26_jan_26 to 31_jan_26\\28_jan_26\\patientslist\\patientbo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93DC0A9-2821-342E-80D1-310EE15E439F}|PatientsList.csproj|solutionrelative:patientbo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A93DC0A9-2821-342E-80D1-310EE15E439F}|PatientsList.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week4---26_jan_26 to 31_jan_26\\28_jan_26\\patientslist\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93DC0A9-2821-342E-80D1-310EE15E439F}|PatientsList.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A93DC0A9-2821-342E-80D1-310EE15E439F}|PatientsList.csproj|d:\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week4---26_jan_26 to 31_jan_26\\28_jan_26\\patientslist\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A93DC0A9-2821-342E-80D1-310EE15E439F}|PatientsList.csproj|solutionrelative:patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week4---26_Jan_26 to 31_Jan_26\\28_Jan_26\\PatientsList\\Patient.cs",
+              "RelativeDocumentMoniker": "Patient.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week4---26_Jan_26 to 31_Jan_26\\28_Jan_26\\PatientsList\\Patient.cs",
+              "RelativeToolTip": "Patient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T06:13:27.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PatientBO.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week4---26_Jan_26 to 31_Jan_26\\28_Jan_26\\PatientsList\\PatientBO.cs",
+              "RelativeDocumentMoniker": "PatientBO.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week4---26_Jan_26 to 31_Jan_26\\28_Jan_26\\PatientsList\\PatientBO.cs",
+              "RelativeToolTip": "PatientBO.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAYwAsAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T06:12:49.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week4---26_Jan_26 to 31_Jan_26\\28_Jan_26\\PatientsList\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week4---26_Jan_26 to 31_Jan_26\\28_Jan_26\\PatientsList\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-28T06:11:44.596Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
