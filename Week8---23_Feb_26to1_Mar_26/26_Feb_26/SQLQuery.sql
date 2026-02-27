@@ -65,7 +65,8 @@ select e.EmployeeID, e.FirstName, e.Lastname, e.Email, a.Street, a.City, a.State
 from Employee e
 inner join Adress a on e.AdressID = a.AdressID
 end;
-
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 CREATE PROCEDURE [dbo].[DeleteEmployee]
 @EmployeeID INT
 AS
@@ -82,7 +83,8 @@ COMMIT TRANSACTION
 
 END
 
-
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 create or alter procedure [dbo].[UpdateEmployeeWithAdress]
 @EmployeeID INT,
 @FirstName varchar(100),
