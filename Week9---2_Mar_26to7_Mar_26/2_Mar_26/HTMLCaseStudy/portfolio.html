@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+      /* Reset & Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        line-height: 1.6;
+        background: #f5f7fb;
+        color: #333;
+      }
+
+      header {
+        background: #111827;
+        color: white;
+        padding: 1rem 2rem;
+      }
+
+      /* Navigation */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      nav h1 {
+        font-size: 1.5rem;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #60a5fa;
+      }
+
+      /* Sections */
+      section {
+        padding: 3rem 2rem;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      /* About */
+      .about {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .about img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #e5e7eb;
+      }
+
+      /* Projects */
+      .projects-grid {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+
+      .project-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 12px;
+        flex: 1 1 300px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+      }
+
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        background: #111827;
+        color: white;
+        margin-top: 2rem;
+      }
+
+      /* ============================= */
+      /* Responsive Design */
+      /* ============================= */
+
+      @media (max-width: 768px) {
+        .about {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .nav-links {
+          width: 100%;
+          justify-content: center;
+          margin-top: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header & Navigation -->
+    <header>
+      <nav>
+        <h1>My Portfolio</h1>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about">
+        <img src="bokuto.jpg" alt="Profile Picture" />
+        <div>
+          <p>
+            Hi! I'm a passionate web developer who loves building responsive and
+            user-friendly websites. I enjoy working with HTML, CSS, and
+            JavaScript to create beautiful web experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Project One</h3>
+          <p>A responsive landing page built using HTML and CSS.</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Project Two</h3>
+          <p>A simple JavaScript app that manages daily tasks.</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Project Three</h3>
+          <p>A portfolio template with modern responsive design.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: mahesh@email.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 My Portfolio. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

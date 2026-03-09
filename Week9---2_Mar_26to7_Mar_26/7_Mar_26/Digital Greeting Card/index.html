@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Birthday Greeting Card</title>
+
+    <style>
+      body {
+        background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        font-family: "Comic Sans MS", cursive;
+        text-align: center;
+        padding-top: 100px;
+      }
+
+      .card {
+        background: white;
+        width: 400px;
+        margin: auto;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        color: #ff4081;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #ff4081;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #e73370;
+      }
+
+      #surprise {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #333;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>🎉 Happy Birthday! 🎂</h1>
+      <p>Hope your special day is filled with happiness and fun!</p>
+
+      <button onclick="showMessage()">Click for Surprise 🎁</button>
+
+      <p id="surprise">Wishing you lots of joy! 🎈</p>
+    </div>
+
+    <script>
+      function showMessage() {
+        document.getElementById("surprise").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
