@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\13_mar_26\\authorsandbooksmanytomany\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\13_mar_26\\authorsandbooksmanytomany\\models\\authorbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|solutionrelative:models\\authorbook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\13_mar_26\\authorsandbooksmanytomany\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|solutionrelative:models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\13_mar_26\\authorsandbooksmanytomany\\migrations\\20260313100224_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|solutionrelative:migrations\\20260313100224_m1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\13_mar_26\\authorsandbooksmanytomany\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\13_mar_26\\authorsandbooksmanytomany\\controllers\\authorbookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|solutionrelative:controllers\\authorbookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\13_mar_26\\authorsandbooksmanytomany\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|solutionrelative:controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\13_mar_26\\authorsandbooksmanytomany\\controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F2ECA84-8D20-4C8D-B696-56725C2329E4}|AuthorsAndBooksManyToMany.csproj|solutionrelative:controllers\\authorscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "20260313100224_m1.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Migrations\\20260313100224_m1.cs",
+              "RelativeDocumentMoniker": "Migrations\\20260313100224_m1.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Migrations\\20260313100224_m1.cs",
+              "RelativeToolTip": "Migrations\\20260313100224_m1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T10:02:25.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Author.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Models\\Author.cs",
+              "RelativeDocumentMoniker": "Models\\Author.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Models\\Author.cs",
+              "RelativeToolTip": "Models\\Author.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:53:55.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthorBook.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Models\\AuthorBook.cs",
+              "RelativeDocumentMoniker": "Models\\AuthorBook.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Models\\AuthorBook.cs",
+              "RelativeToolTip": "Models\\AuthorBook.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:55:17.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Book.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Models\\Book.cs",
+              "RelativeToolTip": "Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBEAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:54:14.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Controllers\\BooksController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:58:45.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthorBooksController.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Controllers\\AuthorBooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthorBooksController.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Controllers\\AuthorBooksController.cs",
+              "RelativeToolTip": "Controllers\\AuthorBooksController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:59:25.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACMAAAAAAAAAAAAuwDoAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-13T09:59:33.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthorsController.cs",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Controllers\\AuthorsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthorsController.cs",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\13_Mar_26\\AuthorsAndBooksManyToMany\\Controllers\\AuthorsController.cs",
+              "RelativeToolTip": "Controllers\\AuthorsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T09:57:54.624Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
