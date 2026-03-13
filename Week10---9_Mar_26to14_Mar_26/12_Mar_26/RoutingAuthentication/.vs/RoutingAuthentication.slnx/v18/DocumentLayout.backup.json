@@ -3,52 +3,52 @@
   "WorkspaceRootPath": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\12_Mar_26\\RoutingAuthentication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\admin\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:views\\admin\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\middleware\\adminauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:middleware\\adminauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\controllers\\admin\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:controllers\\admin\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\controllers\\admin\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:controllers\\admin\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\middleware\\adminauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:middleware\\adminauthmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\admin\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:views\\admin\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{83110FDE-9BC5-4C40-8E1A-D2ADFBA8180E}|RoutingAuthentication.csproj|solutionrelative:services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week10---9_mar_26to14_mar_26\\12_mar_26\\routingauthentication\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E86B2090-459E-23DA-658B-B7BF71B194AC}|RoutingAuthentication.csproj|solutionrelative:services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -75,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\12_Mar_26\\RoutingAuthentication\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
@@ -83,12 +83,11 @@
               "RelativeToolTip": "Controllers\\AccountController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T09:21:56.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:21:56.544Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\12_Mar_26\\RoutingAuthentication\\Controllers\\Admin\\DashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\Admin\\DashboardController.cs",
@@ -96,12 +95,11 @@
               "RelativeToolTip": "Controllers\\Admin\\DashboardController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T09:21:19.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:21:19.516Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AdminAuthMiddleware.cs",
               "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\12_Mar_26\\RoutingAuthentication\\Middleware\\AdminAuthMiddleware.cs",
               "RelativeDocumentMoniker": "Middleware\\AdminAuthMiddleware.cs",
@@ -109,12 +107,11 @@
               "RelativeToolTip": "Middleware\\AdminAuthMiddleware.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T09:18:42.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:18:42.949Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\12_Mar_26\\RoutingAuthentication\\Views\\Admin\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\Dashboard\\Index.cshtml",
@@ -122,8 +119,7 @@
               "RelativeToolTip": "Views\\Admin\\Dashboard\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-12T09:25:32.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:25:32.78Z"
             },
             {
               "$type": "Document",
@@ -135,12 +131,11 @@
               "RelativeToolTip": "Views\\Admin\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-12T09:30:49.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:30:49.909Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\12_Mar_26\\RoutingAuthentication\\Views\\Students\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Students\\Index.cshtml",
@@ -148,12 +143,11 @@
               "RelativeToolTip": "Views\\Students\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-12T09:24:23.788Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:24:23.788Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "StudentsController.cs",
               "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\12_Mar_26\\RoutingAuthentication\\Controllers\\StudentsController.cs",
               "RelativeDocumentMoniker": "Controllers\\StudentsController.cs",
@@ -161,12 +155,11 @@
               "RelativeToolTip": "Controllers\\StudentsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T09:20:23.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:20:23.093Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week10---9_Mar_26to14_Mar_26\\12_Mar_26\\RoutingAuthentication\\Views\\Account\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
@@ -174,8 +167,7 @@
               "RelativeToolTip": "Views\\Account\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-12T09:26:51.74Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:26:51.74Z"
             },
             {
               "$type": "Document",
@@ -187,8 +179,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAAACUAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T09:17:53.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:17:53.06Z"
             },
             {
               "$type": "Document",
@@ -200,8 +191,7 @@
               "RelativeToolTip": "Services\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T09:17:36.353Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:17:36.353Z"
             },
             {
               "$type": "Document",
@@ -213,8 +203,7 @@
               "RelativeToolTip": "Services\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T09:17:08.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:17:08.597Z"
             }
           ]
         }
