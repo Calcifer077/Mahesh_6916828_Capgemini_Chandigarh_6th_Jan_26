@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Week10Assessment.Models.EmployeeProject>
+
+@{
+    ViewData["Title"] = "Employee and Projects";
+}
+
+<h1>Employee and Projects</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Assigned Date
+            </th>
+            <th>
+                Employee Mail
+            </th>
+            <th>
+                Project Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Employee.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.Title)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

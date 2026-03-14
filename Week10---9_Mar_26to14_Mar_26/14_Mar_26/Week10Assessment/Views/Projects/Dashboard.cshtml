@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Project Dashboard";
+}
+
+<h1>Project Dashboard</h1>
+
+
+<div class="row">
+    @foreach (var proj in Model)
+    {
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">@proj.Title</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Started:</strong> @proj.StartDate.ToString("dd MMM yyyy")</p>
+
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Department</th>
+                                    <th>Assigned</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var emp in proj.AssignedEmployees)
+                                {
+                                    <tr>
+                                        <td>@emp.FullName <small class="text-muted">(@emp.Email)</small></td>
+                                        <td>@emp.DepartmentName</td>
+                                        <td>@emp.AssignedDate.ToString("dd MMM yyyy")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        
+                </div>
+            </div>
+        </div>
+    }
+</div>

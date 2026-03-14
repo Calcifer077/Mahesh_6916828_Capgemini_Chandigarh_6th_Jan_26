@@ -1,0 +1,36 @@
+﻿@model Week10Assessment.Models.EmployeeProject
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>EmployeeProject</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Assigned Date
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AssignedDate)
+        </dd>
+        <dt class = "col-sm-2">
+            Employee Email Id
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Employee.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            Project Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Project.Title)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
