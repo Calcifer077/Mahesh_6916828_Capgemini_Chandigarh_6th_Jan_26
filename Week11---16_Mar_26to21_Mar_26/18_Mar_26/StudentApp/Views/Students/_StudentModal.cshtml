@@ -1,0 +1,40 @@
+﻿@model StudentApp.Models.Student
+
+<div class="modal fade" id="studentModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form asp-action="@(Model?.Id == 0 ? "Create" : "Edit")" method="post">
+
+                <div class="modal-header">
+                    <h5>@(Model?.Id == 0 ? "Add Student" : "Edit Student")</h5>
+                </div>
+
+                <div class="modal-body">
+
+                    <input type="hidden" asp-for="Id" />
+
+                    <input asp-for="Name" class="form-control mb-2" placeholder="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                    <input asp-for="Email" class="form-control mb-2" placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+
+                    <input asp-for="Course" class="form-control mb-2" placeholder="Course" />
+                    <span asp-validation-for="Course" class="text-danger"></span>
+
+                    <input asp-for="JoiningDate" type="date" class="form-control mb-2" />
+                    <span asp-validation-for="JoiningDate" class="text-danger"></span>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-success">Save</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

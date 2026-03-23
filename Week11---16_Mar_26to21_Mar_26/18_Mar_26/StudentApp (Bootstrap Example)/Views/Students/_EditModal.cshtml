@@ -1,0 +1,34 @@
+﻿@model StudentApp.Models.Student
+
+<div class="modal fade" id="editModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form asp-action="Edit" asp-controller="Students" method="post">
+
+                @Html.AntiForgeryToken()
+
+                <div class="modal-header">
+                    <h5>Edit Student</h5>
+                </div>
+
+                <div class="modal-body">
+
+                    <input type="hidden" asp-for="Id" />
+
+                    <input asp-for="Name" class="form-control mb-2" />
+                    <input asp-for="Age" class="form-control mb-2" />
+                    <input asp-for="Course" class="form-control mb-2" />
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Update</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

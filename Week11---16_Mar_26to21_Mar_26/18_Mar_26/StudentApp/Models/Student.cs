@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace StudentApp.Models
 {
@@ -6,12 +7,18 @@ namespace StudentApp.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        [Range(18, 60)]
-        public int Age { get; set; }
+        [Required]
+        [EmailAddress(ErrorMessage = "Invalid Email")]
+        public string Email { get; set; }
 
+        [Required]
         public string Course { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime JoiningDate { get; set; }
     }
 }

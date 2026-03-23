@@ -1,0 +1,32 @@
+﻿@model ShoppingCartMvc.Models.Order
+
+<h2 class="mb-3">Checkout</h2>
+
+<!-- Progress Bar -->
+<div class="progress mb-4">
+    <div class="progress-bar bg-success" style="width:75%">
+        Step 3: Payment
+    </div>
+</div>
+
+<form method="post" class="card p-4 shadow">
+
+    <h4 class="mb-3">Shipping Details</h4>
+
+    <label>Full Name</label>
+    <input asp-for="FullName" class="form-control mb-2" />
+    <span asp-validation-for="FullName" class="text-danger"></span>
+
+    <label>Address</label>
+    <input asp-for="Address" class="form-control mb-2" />
+    <span asp-validation-for="Address" class="text-danger"></span>
+
+    <label>Card Number</label>
+    <input asp-for="CardNumber" class="form-control mb-2" />
+    <span asp-validation-for="CardNumber" class="text-danger"></span>
+
+    <button class="btn btn-success w-100 mt-3">
+        Place Order
+    </button>
+
+</form>

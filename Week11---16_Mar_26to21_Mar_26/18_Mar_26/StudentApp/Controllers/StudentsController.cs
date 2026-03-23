@@ -1,111 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StudentApp.Data;
 using StudentApp.Models;
 
-namespace StudentApp.Controllers
+public class StudentsController : Controller
 {
-    public class StudentsController : Controller
+    private readonly ApplicationDbContext _context;
+
+    public StudentsController(ApplicationDbContext context)
     {
-        private readonly StudentAppContext _context;
+        _context = context;
+    }
 
-        public StudentsController(StudentAppContext context)
+    public async Task<IActionResult> Index()
+    {
+        return View(await _context.Students.ToListAsync());
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Create(Student student)
+    {
+        if (ModelState.IsValid)
         {
-            _context = context;
+            _context.Add(student);
+            await _context.SaveChangesAsync();
         }
+        return RedirectToAction("Index");
+    }
 
-        // ===================== INDEX =====================
-        public async Task<IActionResult> Index()
+    public async Task<IActionResult> Edit(int id)
+    {
+        var student = await _context.Students.FindAsync(id);
+        return PartialView("_StudentModal", student);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Edit(Student student)
+    {
+        if (ModelState.IsValid)
         {
-            return View(await _context.Student.ToListAsync());
+            _context.Update(student);
+            await _context.SaveChangesAsync();
         }
+        return RedirectToAction("Index");
+    }
 
-        // ===================== CREATE =====================
-        public IActionResult Create()
+    [HttpPost]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var student = await _context.Students.FindAsync(id);
+        if (student != null)
         {
-            return View();
+            _context.Remove(student);
+            await _context.SaveChangesAsync();
         }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Student student)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(student);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(student);
-        }
-
-        // ===================== EDIT (MODAL GET) =====================
-        // Returns Partial View for Modal
-        public async Task<IActionResult> Edit(int id)
-        {
-            var student = await _context.Student.FindAsync(id);
-
-            if (student == null)
-                return NotFound();
-
-            return PartialView("_EditModal", student);
-        }
-
-        // ===================== EDIT (POST) =====================
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Student student)
-        {
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(student);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!_context.Student.Any(e => e.Id == student.Id))
-                        return NotFound();
-                    else
-                        throw;
-                }
-
-                return RedirectToAction(nameof(Index));
-            }
-
-            return PartialView("_EditModal", student);
-        }
-
-        // ===================== DELETE (MODAL POST) =====================
-        [HttpPost]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var student = await _context.Student.FindAsync(id);
-
-            if (student != null)
-            {
-                _context.Student.Remove(student);
-                await _context.SaveChangesAsync();
-            }
-
-            return RedirectToAction(nameof(Index));
-        }
-
-        // ===================== OPTIONAL: DETAILS =====================
-        public async Task<IActionResult> Details(int id)
-        {
-            var student = await _context.Student
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (student == null)
-                return NotFound();
-
-            return View(student);
-        }
+        return RedirectToAction("Index");
     }
 }

@@ -1,0 +1,62 @@
+﻿@model List<ShoppingCartMvc.Models.CartItem>
+
+<h2 class="mb-4">🛒 Your Cart</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning">Your cart is empty.</div>
+}
+else
+{
+    <table class="table table-bordered table-hover shadow">
+        <thead class="table-dark">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th width="180">Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @{
+                decimal grandTotal = 0;
+            }
+
+            @foreach (var item in Model)
+            {
+                var total = item.Price * item.Quantity;
+                grandTotal += total;
+
+                <tr>
+                    <td>@item.Name</td>
+                    <td>₹@item.Price</td>
+
+                    <td>
+                        <a asp-action="Decrease" asp-route-id="@item.ProductId" class="btn btn-danger btn-sm">-</a>
+                        <span class="mx-2 fw-bold">@item.Quantity</span>
+                        <a asp-action="Increase" asp-route-id="@item.ProductId" class="btn btn-success btn-sm">+</a>
+                    </td>
+
+                    <td class="fw-bold">₹@total</td>
+
+                    <td>
+                        <a asp-action="Decrease" asp-route-id="@item.ProductId" class="btn btn-outline-danger btn-sm">
+                            Remove
+                        </a>
+                    </td>
+                </tr>
+            }
+
+            <tr class="table-success">
+                <td colspan="3" class="text-end fw-bold">Grand Total</td>
+                <td colspan="2" class="fw-bold">₹@grandTotal</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a asp-action="Checkout" class="btn btn-primary w-100 mt-3">
+        Proceed to Checkout
+    </a>
+}

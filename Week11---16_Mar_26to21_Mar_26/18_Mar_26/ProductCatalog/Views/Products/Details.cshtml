@@ -1,0 +1,21 @@
+﻿@model ProductCatalog.Models.Product
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+        <div class="row">
+
+            <div class="col-md-6">
+                <img src="@Model.ImageUrl" class="img-fluid" />
+            </div>
+
+            <div class="col-md-6 p-4">
+                <h2>@Model.Name</h2>
+                <p>@Model.Description</p>
+                <h4>₹@Model.Price</h4>
+            </div>
+
+        </div>
+    </div>
+
+</div>
