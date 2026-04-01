@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week12---23_Mar_26to28_Mar_26\\28_Mar_26\\EventBooking.API\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6270C559-BA4C-0428-C328-0DC3DF11A82F}|EventBooking.API.csproj|c:\\d-drive\\my files\\capgegemini_cu_sec3_.netwithazure_mahesh\\week12---23_mar_26to28_mar_26\\28_mar_26\\eventbooking.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6270C559-BA4C-0428-C328-0DC3DF11A82F}|EventBooking.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +14,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week12---23_Mar_26to28_Mar_26\\28_Mar_26\\EventBooking.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\D-drive\\My files\\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\\Week12---23_Mar_26to28_Mar_26\\28_Mar_26\\EventBooking.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-31T10:49:52.143Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"

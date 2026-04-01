@@ -15,7 +15,8 @@ namespace EventBooking.API.Services
             _config = config;
         }
 
-        public string GenerateToken(IdentityUser user)
+        // Updated signature to accept role
+        public string GenerateToken(IdentityUser user, string role)
         {
             var key = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
@@ -24,6 +25,7 @@ namespace EventBooking.API.Services
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Email, user.Email!),
+                new Claim(ClaimTypes.Role, role),          // ← role claim in token
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 

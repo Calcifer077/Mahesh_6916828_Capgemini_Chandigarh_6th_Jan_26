@@ -1,0 +1,131 @@
+@page
+@model EventBooking.Web.Pages.AdminModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="bi bi-shield-lock"></i> Admin Dashboard</h2>
+    <span class="badge bg-danger fs-6">Admin</span>
+</div>
+
+<ul class="nav nav-tabs mb-4" id="adminTabs">
+    <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="tab" href="#createEvent">
+            <i class="bi bi-plus-circle"></i> Create Event
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#manageEvents">
+            <i class="bi bi-calendar-check"></i> Manage Events
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#allBookings">
+            <i class="bi bi-ticket-perforated"></i> All Bookings
+        </a>
+    </li>
+</ul>
+
+<div class="tab-content">
+
+    <!-- Create Event Tab -->
+    <div class="tab-pane fade show active" id="createEvent">
+        <div class="card shadow-sm" style="max-width: 600px;">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Create New Event</h5>
+            </div>
+            <div class="card-body">
+                <div id="createEventAlert" class="alert d-none"></div>
+                <div id="createEventForm">
+                    <div class="mb-3">
+                        <label class="form-label">Title <span class="text-danger">*</span></label>
+                        <input type="text" id="evTitle" class="form-control" placeholder="Event title"/>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea id="evDesc" class="form-control" rows="3" placeholder="Event description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Date <span class="text-danger">*</span></label>
+                        <input type="datetime-local" id="evDate" class="form-control"/>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Location <span class="text-danger">*</span></label>
+                        <input type="text" id="evLocation" class="form-control" placeholder="Event location"/>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Available Seats <span class="text-danger">*</span></label>
+                        <input type="number" id="evSeats" class="form-control" min="1" placeholder="Number of seats"/>
+                    </div>
+                    <button class="btn btn-primary w-100" onclick="createNewEvent()">
+                        <i class="bi bi-plus-circle"></i> Create Event
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Events Tab -->
+    <div class="tab-pane fade" id="manageEvents">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Seats</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="adminEventsBody">
+                    <tr><td colspan="6" class="text-center py-4">
+                        <div class="spinner-border text-primary"></div>
+                    </td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- All Bookings Tab -->
+    <div class="tab-pane fade" id="allBookings">
+        <div id="allBookingsAlert" class="alert d-none"></div>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Event</th>
+                        <th>User ID</th>
+                        <th>Seats</th>
+                        <th>Booked On</th>
+                    </tr>
+                </thead>
+                <tbody id="allBookingsBody">
+                    <tr><td colspan="5" class="text-center py-4">
+                        <div class="spinner-border text-primary"></div>
+                    </td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+<script>
+    // Guard — redirect non-admins away
+    if (!isAdmin()) window.location.href = "/Events";
+
+    loadAdminEvents();
+    loadAllBookings();
+
+    // Reload events table when tab is clicked
+    document.querySelector('[href="#manageEvents"]')
+        .addEventListener('shown.bs.tab', loadAdminEvents);
+    document.querySelector('[href="#allBookings"]')
+        .addEventListener('shown.bs.tab', loadAllBookings);
+</script>
+}

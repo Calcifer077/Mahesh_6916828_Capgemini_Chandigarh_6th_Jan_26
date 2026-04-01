@@ -16,15 +16,22 @@
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/Events">Events</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/MyBookings">My Bookings</a></li>
-                    <li class="nav-item" id="loginLink">
-                        <a class="nav-link" href="/Login">Login</a>
-                    </li>
-                    <li class="nav-item d-none" id="logoutLink">
-                        <a class="nav-link" href="#" onclick="logout()">Logout</a>
-                    </li>
-                </ul>
+    <li class="nav-item"><a class="nav-link" href="/Events">Events</a></li>
+    <li class="nav-item" id="myBookingsLink">
+        <a class="nav-link" href="/MyBookings">My Bookings</a>
+    </li>
+    <li class="nav-item d-none" id="adminLink">
+        <a class="nav-link text-warning" href="/Admin">
+            <i class="bi bi-shield-lock"></i> Admin
+        </a>
+    </li>
+    <li class="nav-item" id="loginLink">
+        <a class="nav-link" href="/Login">Login</a>
+    </li>
+    <li class="nav-item d-none" id="logoutLink">
+        <a class="nav-link" href="#" onclick="logout()">Logout</a>
+    </li>
+</ul>
             </div>
         </div>
     </nav>

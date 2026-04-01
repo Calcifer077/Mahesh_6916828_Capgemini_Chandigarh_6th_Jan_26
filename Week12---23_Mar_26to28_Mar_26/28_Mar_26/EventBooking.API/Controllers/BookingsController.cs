@@ -23,7 +23,7 @@ namespace EventBooking.API.Controllers
             _mapper = mapper;
         }
 
-        // GET api/bookings (user's own bookings)
+        // User — their own bookings only
         [HttpGet]
         public async Task<IActionResult> GetMyBookings()
         {
@@ -36,7 +36,19 @@ namespace EventBooking.API.Controllers
             return Ok(_mapper.Map<List<BookingDto>>(bookings));
         }
 
-        // POST api/bookings
+        // Admin — view all bookings across all users
+        [HttpGet("all")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> GetAllBookings()
+        {
+            var bookings = await _context.Bookings
+                .Include(b => b.Event)
+                .ToListAsync();
+
+            return Ok(_mapper.Map<List<BookingDto>>(bookings));
+        }
+
+        // Any logged-in user — book tickets
         [HttpPost]
         public async Task<IActionResult> Book(CreateBookingDto dto)
         {
@@ -61,12 +73,11 @@ namespace EventBooking.API.Controllers
             _context.Bookings.Add(booking);
             await _context.SaveChangesAsync();
 
-            // Reload with event for mapping
             await _context.Entry(booking).Reference(b => b.Event).LoadAsync();
             return CreatedAtAction(nameof(GetMyBookings), _mapper.Map<BookingDto>(booking));
         }
 
-        // DELETE api/bookings/{id}
+        // User — cancel their own booking
         [HttpDelete("{id}")]
         public async Task<IActionResult> Cancel(int id)
         {

@@ -21,7 +21,7 @@ namespace EventBooking.API.Controllers
             _mapper = mapper;
         }
 
-        // GET api/events
+        // Public — anyone can view events
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -29,7 +29,6 @@ namespace EventBooking.API.Controllers
             return Ok(_mapper.Map<List<EventDto>>(events));
         }
 
-        // GET api/events/5
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -38,9 +37,9 @@ namespace EventBooking.API.Controllers
             return Ok(_mapper.Map<EventDto>(ev));
         }
 
-        // POST api/events (Admin use)
+        // Admin only — create event
         [HttpPost]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create(CreateEventDto dto)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
@@ -49,6 +48,19 @@ namespace EventBooking.API.Controllers
             _context.Events.Add(ev);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetById), new { id = ev.Id }, _mapper.Map<EventDto>(ev));
+        }
+
+        // Admin only — delete event
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var ev = await _context.Events.FindAsync(id);
+            if (ev == null) return NotFound();
+
+            _context.Events.Remove(ev);
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Event deleted successfully" });
         }
     }
 }

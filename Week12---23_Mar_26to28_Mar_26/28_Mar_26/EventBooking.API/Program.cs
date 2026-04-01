@@ -67,4 +67,12 @@ app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var userManager  = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    var roleManager  = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await AdminSeeder.SeedAsync(userManager, roleManager);
+}
+
 app.Run();

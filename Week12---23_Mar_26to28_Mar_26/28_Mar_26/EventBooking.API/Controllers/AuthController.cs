@@ -28,9 +28,11 @@ namespace EventBooking.API.Controllers
             };
 
             var result = await _userManager.CreateAsync(user, dto.Password);
-
             if (!result.Succeeded)
                 return BadRequest(result.Errors);
+
+            // Assign "User" role by default on registration
+            await _userManager.AddToRoleAsync(user, "User");
 
             return Ok(new { message = "Registration successful" });
         }
@@ -42,13 +44,18 @@ namespace EventBooking.API.Controllers
             if (user == null || !await _userManager.CheckPasswordAsync(user, dto.Password))
                 return Unauthorized(new { message = "Invalid credentials" });
 
-            var token = _jwtService.GenerateToken(user);
+            // Get roles for the user
+            var roles = await _userManager.GetRolesAsync(user);
+            var role = roles.FirstOrDefault() ?? "User";
+
+            var token = _jwtService.GenerateToken(user, role);
 
             return Ok(new AuthResponseDto
             {
                 Token = token,
                 Email = user.Email!,
-                FullName = user.UserName!
+                FullName = user.UserName!,
+                Role = role
             });
         }
     }
