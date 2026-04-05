@@ -1,0 +1,181 @@
+@model IEnumerable<SmartHealthcare.Models.DTOs.UserDTO>
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<div class="page-container">
+
+    <!-- Header -->
+    <div class="page-header">
+        <h2>User Management</h2>
+        <p>Manage system users</p>
+    </div>
+
+    @if (Model.Any())
+    {
+        <div class="card">
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Created</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td class="id">@user.Id</td>
+                            <td>@user.FullName</td>
+                            <td>@user.Email</td>
+                            <td>
+                                <span class="role role-@user.Role.ToLower()">
+                                    @user.Role
+                                </span>
+                            </td>
+                            <td>@user.CreatedAt.ToString("dd MMM yyyy")</td>
+                            <td>
+                                <form asp-action="DeleteUser" method="post" onsubmit="return confirm('Delete user?');">
+                                    <input type="hidden" name="id" value="@user.Id" />
+                                    <button type="submit" class="btn-delete">
+                                        Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="empty-state">
+            No users found.
+        </div>
+    }
+</div>
+
+@functions {
+    private string GetRoleBg(string role)
+    {
+        return role?.ToLower() switch
+        {
+            "admin" => "danger",
+            "doctor" => "success",
+            "patient" => "info",
+            _ => "secondary"
+        };
+    }
+}
+
+<style>
+    body {
+        background: #f7f7f7;
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #222;
+    }
+
+    .page-container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    .page-header {
+        margin-bottom: 20px;
+    }
+
+    .page-header h2 {
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+
+    .page-header p {
+        color: #777;
+        font-size: 14px;
+    }
+
+    .card {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .user-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .user-table th,
+    .user-table td {
+        padding: 12px 14px;
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .user-table thead {
+        background: #fafafa;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .user-table th {
+        font-weight: 600;
+        color: #555;
+    }
+
+    .user-table tbody tr {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .user-table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .id {
+        font-weight: 600;
+        color: #444;
+    }
+
+    /* Role badges */
+    .role {
+        font-size: 12px;
+        padding: 4px 8px;
+        border-radius: 6px;
+        background: #eee;
+    }
+
+    .role-admin { background: #fdecea; color: #a33; }
+    .role-doctor { background: #eaf7ee; color: #2f7a4a; }
+    .role-patient { background: #eaf2ff; color: #2a5db0; }
+
+    /* Delete button */
+    .btn-delete {
+        background: none;
+        border: 1px solid #ddd;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+    .btn-delete:hover {
+        border-color: #d33;
+        color: #d33;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 40px;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        color: #777;
+    }
+</style>

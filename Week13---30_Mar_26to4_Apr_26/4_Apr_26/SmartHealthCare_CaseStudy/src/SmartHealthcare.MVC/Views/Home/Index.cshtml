@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Home";
+    var token = Context.Session.GetString("Token");
+}
+
+<div class="page-container">
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Smart Healthcare</h1>
+        <p class="muted">
+            Manage doctors, patients, and appointments in one simple system.
+        </p>
+
+        <div class="actions">
+            @if (token == null)
+            {
+                <a asp-controller="Account" asp-action="Register" class="btn primary">Get Started</a>
+                <a asp-controller="Doctor" asp-action="Index" class="btn">Browse Doctors</a>
+            }
+            else
+            {
+                <a asp-controller="Dashboard" asp-action="Index" class="btn primary">Dashboard</a>
+                <a asp-controller="Appointment" asp-action="Create" class="btn">Book Appointment</a>
+            }
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="section">
+        <h3>Features</h3>
+
+        <div class="feature-list">
+            <div class="feature-item">
+                <strong>Patients</strong>
+                <p class="muted">Book appointments and manage your health records.</p>
+            </div>
+
+            <div class="feature-item">
+                <strong>Doctors</strong>
+                <p class="muted">Manage schedules and patient visits easily.</p>
+            </div>
+
+            <div class="feature-item">
+                <strong>Administration</strong>
+                <p class="muted">Control users and monitor system activity.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why -->
+    <div class="section">
+        <h3>Why choose this system</h3>
+
+        <ul class="list">
+            <li>Simple appointment booking</li>
+            <li>Qualified doctors</li>
+            <li>Secure data handling</li>
+            <li>Digital prescriptions</li>
+            <li>Available anytime</li>
+        </ul>
+    </div>
+
+</div>
+
+<style>
+    body {
+        background: #f5f5f5;
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #222;
+    }
+
+    .page-container {
+        max-width: 700px;
+        margin: 60px auto;
+        padding: 0 16px;
+    }
+
+    .hero {
+        margin-bottom: 40px;
+    }
+
+    .hero h1 {
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .muted {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .actions {
+        margin-top: 16px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .section {
+        margin-bottom: 32px;
+    }
+
+    .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .feature-item {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        padding: 12px;
+    }
+
+    .list {
+        padding-left: 18px;
+        color: #444;
+    }
+
+    .btn {
+        padding: 8px 14px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        text-decoration: none;
+        color: #222;
+        background: #fff;
+        font-size: 14px;
+    }
+
+    .btn.primary {
+        background: #222;
+        color: #fff;
+        border-color: #222;
+    }
+
+    .btn:hover {
+        background: #f0f0f0;
+    }
+
+    .btn.primary:hover {
+        background: #000;
+    }
+</style>

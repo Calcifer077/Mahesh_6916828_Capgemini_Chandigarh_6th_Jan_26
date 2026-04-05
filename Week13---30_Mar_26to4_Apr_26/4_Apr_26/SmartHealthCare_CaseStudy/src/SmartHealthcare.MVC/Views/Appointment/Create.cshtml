@@ -1,0 +1,218 @@
+@model SmartHealthcare.Models.DTOs.CreateAppointmentDTO
+@{
+    ViewData["Title"] = "Book Appointment";
+    var doctors = ViewBag.Doctors as IEnumerable<SmartHealthcare.Models.DTOs.DoctorDTO> ?? Enumerable.Empty<SmartHealthcare.Models.DTOs.DoctorDTO>();
+}
+
+<div class="page-container">
+
+    <!-- Back -->
+    <a href="@Url.Action("Index")" class="back-link">← Back</a>
+
+    <div class="card">
+
+        <!-- Header -->
+        <div class="card-header">
+            <h2>Book Appointment</h2>
+            <p>Select doctor and time</p>
+        </div>
+
+        <!-- Form -->
+        <form asp-action="Create" method="post" novalidate>
+            <div asp-validation-summary="All" class="error-box"></div>
+
+            <!-- Doctor -->
+            <div class="form-group">
+                <label asp-for="DoctorId"></label>
+                <select asp-for="DoctorId" class="form-input">
+                    <option value="">Select a doctor</option>
+                    @foreach (var doctor in doctors)
+                    {
+                        <option value="@doctor.Id">
+                            Dr. @doctor.FullName (@string.Join(", ", doctor.Specializations ?? new List<string>())) - Rs.@doctor.ConsultationFee
+                        </option>
+                    }
+                </select>
+                <span asp-validation-for="DoctorId" class="error-text"></span>
+            </div>
+
+            <!-- Date -->
+            <div class="form-group">
+                <label asp-for="AppointmentDate"></label>
+                <input asp-for="AppointmentDate" type="datetime-local" class="form-input" />
+                <small class="hint-text">Choose a future date</small>
+                <span asp-validation-for="AppointmentDate" class="error-text"></span>
+            </div>
+
+            <!-- Notes -->
+            <div class="form-group">
+                <label asp-for="Notes"></label>
+                <textarea asp-for="Notes" rows="4" class="form-input" placeholder="Optional notes"></textarea>
+                <span asp-validation-for="Notes" class="error-text"></span>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">
+                    Book Appointment
+                </button>
+
+                <a href="@Url.Action("Index")" class="btn-secondary">
+                    Cancel
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Info -->
+    <div class="info-box">
+        <ul>
+            <li>Arrive 10 minutes early</li>
+            <li>Bring relevant documents</li>
+            <li>Cancel at least 24 hours in advance</li>
+        </ul>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    body {
+        background: #f7f7f7;
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #222;
+    }
+
+    .page-container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-bottom: 16px;
+        color: #555;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+
+    .card {
+        background: #fff;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        padding: 24px;
+    }
+
+    .card-header {
+        margin-bottom: 20px;
+    }
+
+    .card-header h2 {
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+
+    .card-header p {
+        color: #777;
+        font-size: 14px;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: #555;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: #4a90e2;
+    }
+
+    .hint-text {
+        font-size: 12px;
+        color: #888;
+        margin-top: 4px;
+        display: block;
+    }
+
+    .form-actions {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn-primary {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        background: #4a90e2;
+        color: #fff;
+        border-radius: 8px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background: #3a78c2;
+    }
+
+    .btn-secondary {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+    }
+
+    .btn-secondary:hover {
+        border-color: #aaa;
+    }
+
+    .error-box {
+        background: #ffecec;
+        color: #d8000c;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        font-size: 13px;
+    }
+
+    .error-text {
+        font-size: 12px;
+        color: #d8000c;
+    }
+
+    .info-box {
+        margin-top: 16px;
+        font-size: 13px;
+        color: #777;
+    }
+
+    .info-box ul {
+        padding-left: 16px;
+    }
+</style>

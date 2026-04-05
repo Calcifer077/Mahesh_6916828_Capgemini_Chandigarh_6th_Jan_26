@@ -1,0 +1,176 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    var role = ViewBag.Role as string;
+    var fullName = ViewBag.FullName as string;
+}
+
+<div class="page-container">
+
+    <!-- Header -->
+    <div class="page-header">
+        <h2>Welcome, @fullName</h2>
+        <p>Role: <strong>@role</strong></p>
+    </div>
+
+    <!-- Admin -->
+    @if (role == "Admin")
+    {
+        <div class="grid">
+            <a href="@Url.Action("Users", "Admin")" class="card">
+                <span>Users</span>
+                <h3>Manage</h3>
+            </a>
+
+            <a href="@Url.Action("Index", "Doctor")" class="card">
+                <span>Doctors</span>
+                <h3>View</h3>
+            </a>
+
+            <a href="@Url.Action("Index", "Appointment")" class="card">
+                <span>Patients</span>
+                <h3>View</h3>
+            </a>
+
+            <a href="@Url.Action("Index", "Appointment")" class="card">
+                <span>Appointments</span>
+                <h3>View</h3>
+            </a>
+        </div>
+
+        <div class="section">
+            <h4>Reports</h4>
+            <a href="@Url.Action("Reports", "Admin")" class="btn">View Reports</a>
+        </div>
+    }
+
+    <!-- Doctor -->
+    @if (role == "Doctor")
+    {
+        <div class="grid">
+            <a href="@Url.Action("Index", "Appointment")" class="card">
+                <span>Appointments</span>
+                <h3>View Schedule</h3>
+            </a>
+
+            <a href="@Url.Action("Profile", "Patient")" class="card">
+                <span>Profile</span>
+                <h3>Edit</h3>
+            </a>
+
+            <div class="card">
+                <span>Prescriptions</span>
+                <h3>Coming Soon</h3>
+            </div>
+        </div>
+    }
+
+    <!-- Patient -->
+    @if (role == "Patient")
+    {
+        <div class="grid">
+            <a href="@Url.Action("Create", "Appointment")" class="card">
+                <span>Appointment</span>
+                <h3>Book</h3>
+            </a>
+
+            <a href="@Url.Action("Index", "Appointment")" class="card">
+                <span>My Appointments</span>
+                <h3>View</h3>
+            </a>
+
+            <a href="@Url.Action("Profile", "Patient")" class="card">
+                <span>Profile</span>
+                <h3>Edit</h3>
+            </a>
+        </div>
+
+        <div class="section">
+            <h4>Find a Doctor</h4>
+            <a href="@Url.Action("Index", "Doctor")" class="btn">Browse Doctors</a>
+        </div>
+    }
+
+</div>
+
+<style>
+    body {
+        background: #f5f5f5;
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #222;
+    }
+
+    .page-container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 0 16px;
+    }
+
+    .page-header {
+        margin-bottom: 24px;
+    }
+
+    .page-header h2 {
+        margin: 0 0 4px;
+        font-weight: 600;
+    }
+
+    .page-header p {
+        color: #666;
+        font-size: 14px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .card {
+        display: block;
+        text-decoration: none;
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        padding: 16px;
+        background: #fff;
+        color: #222;
+    }
+
+    .card span {
+        font-size: 13px;
+        color: #777;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .card h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .section {
+        margin-top: 20px;
+    }
+
+    .section h4 {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 14px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #222;
+        background: #fff;
+        font-size: 14px;
+    }
+
+    .btn:hover {
+        background: #f0f0f0;
+    }
+</style>

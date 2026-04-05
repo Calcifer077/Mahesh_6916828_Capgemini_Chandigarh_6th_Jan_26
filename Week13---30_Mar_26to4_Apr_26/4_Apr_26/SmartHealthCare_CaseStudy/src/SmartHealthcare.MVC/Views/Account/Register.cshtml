@@ -1,0 +1,198 @@
+@model SmartHealthcare.Models.DTOs.RegisterDTO
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="register-container">
+    <div class="register-card">
+
+        <!-- Header -->
+        <div class="register-header">
+            <h2>Create Account</h2>
+            <p>Join Smart Healthcare</p>
+        </div>
+
+        <!-- Form -->
+        <form asp-action="Register" method="post" novalidate>
+            <div asp-validation-summary="All" class="error-box"></div>
+
+            <!-- Full Name -->
+            <div class="form-group">
+                <label asp-for="FullName"></label>
+                <input asp-for="FullName" class="form-input" placeholder="Full name" />
+                <span asp-validation-for="FullName" class="error-text"></span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" type="email" class="form-input" placeholder="Email" />
+                <span asp-validation-for="Email" class="error-text"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" type="password" class="form-input" placeholder="Password" />
+                <small class="hint-text">Minimum 6 characters</small>
+                <span asp-validation-for="Password" class="error-text"></span>
+            </div>
+
+            <!-- Role -->
+            <div class="form-group">
+                <label asp-for="Role"></label>
+                <select asp-for="Role" class="form-input">
+                    <option value="Patient">Patient</option>
+                    <option value="Doctor">Doctor</option>
+                </select>
+                <span asp-validation-for="Role" class="error-text"></span>
+            </div>
+
+            <!-- Terms -->
+            <div class="form-check">
+                <input type="checkbox" id="terms" required />
+                <label for="terms">I agree to the Terms</label>
+            </div>
+
+            <!-- Button -->
+            <button type="submit" class="btn-primary">
+                Create Account
+            </button>
+        </form>
+
+        <!-- Footer -->
+        <div class="register-footer">
+            <span>Already have an account?</span>
+            <a asp-action="Login">Login</a>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    body {
+        background: #f7f7f7;
+        font-family: system-ui, -apple-system, sans-serif;
+        color: #222;
+    }
+
+    .register-container {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .register-card {
+        width: 100%;
+        max-width: 420px;
+        background: #ffffff;
+        padding: 32px;
+        border-radius: 12px;
+        border: 1px solid #e5e5e5;
+    }
+
+    .register-header {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    .register-header h2 {
+        margin-bottom: 6px;
+        font-weight: 600;
+    }
+
+    .register-header p {
+        font-size: 14px;
+        color: #777;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: #555;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: #4a90e2;
+    }
+
+    .hint-text {
+        font-size: 12px;
+        color: #888;
+        margin-top: 4px;
+        display: block;
+    }
+
+    .form-check {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #4a90e2;
+        color: #fff;
+        border-radius: 8px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background: #3a78c2;
+    }
+
+    .error-box {
+        background: #ffecec;
+        color: #d8000c;
+        padding: 10px;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        font-size: 13px;
+    }
+
+    .error-text {
+        font-size: 12px;
+        color: #d8000c;
+    }
+
+    .register-footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .register-footer a {
+        margin-left: 5px;
+        color: #4a90e2;
+        text-decoration: none;
+    }
+
+    .register-footer a:hover {
+        text-decoration: underline;
+    }
+</style>
