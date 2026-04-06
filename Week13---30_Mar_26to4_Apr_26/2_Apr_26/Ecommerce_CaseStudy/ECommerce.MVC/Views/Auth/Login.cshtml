@@ -1,0 +1,358 @@
+@model LoginViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login — ECommerce</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --ink:      #0d0d0d;
+            --ink-2:    #6b6b6b;
+            --ink-3:    #b0b0b0;
+            --paper:    #fafaf8;
+            --surface:  #ffffff;
+            --border:   #e8e8e4;
+            --accent:   #c9a96e;
+            --danger:   #c0392b;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            display: flex;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        /* ── Layout ── */
+        .shell {
+            display: flex;
+            width: 100%;
+        }
+
+        /* ── Left panel ── */
+        .panel-left {
+            flex: 1.1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 52px 56px;
+            background: var(--ink);
+            overflow: hidden;
+        }
+
+        /* subtle grain overlay */
+        .panel-left::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            opacity: 0.35;
+            pointer-events: none;
+        }
+
+        /* faint accent circle */
+        .panel-left::after {
+            content: '';
+            position: absolute;
+            bottom: -160px;
+            right: -120px;
+            width: 480px;
+            height: 480px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201,169,110,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .brand-mark {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-mark span {
+            display: inline-block;
+            font-family: 'DM Serif Display', serif;
+            font-size: 22px;
+            color: #ffffff;
+            letter-spacing: 0.02em;
+        }
+
+        .brand-mark span em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .panel-copy {
+            position: relative;
+            z-index: 1;
+        }
+
+        .panel-copy h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(32px, 3.5vw, 46px);
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .panel-copy h2 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .panel-copy p {
+            font-size: 14px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.7;
+            max-width: 300px;
+        }
+
+        .panel-footer {
+            position: relative;
+            z-index: 1;
+            font-size: 12px;
+            color: rgba(255,255,255,0.2);
+            letter-spacing: 0.04em;
+        }
+
+        /* decorative line */
+        .deco-line {
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        /* ── Right panel ── */
+        .panel-right {
+            flex: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 40px;
+            background: var(--paper);
+        }
+
+        .form-card {
+            width: 100%;
+            max-width: 360px;
+            animation: fadeUp 0.5s ease both;
+        }
+
+        @* @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to   { opacity: 1; transform: translateY(0); }
+        } *@
+
+        .form-card h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            font-weight: 400;
+            margin-bottom: 6px;
+            color: var(--ink);
+        }
+
+        .form-card .subtitle {
+            font-size: 13px;
+            color: var(--ink-2);
+            margin-bottom: 36px;
+            font-weight: 300;
+        }
+
+        /* ── Fields ── */
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            margin-bottom: 8px;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 13px 16px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--surface);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--ink);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            -webkit-appearance: none;
+        }
+
+        .field input::placeholder {
+            color: var(--ink-3);
+        }
+
+        .field input:focus {
+            outline: none;
+            border-color: var(--ink);
+            box-shadow: 0 0 0 3px rgba(13,13,13,0.06);
+        }
+
+        /* ── Submit ── */
+        .btn-submit {
+            width: 100%;
+            margin-top: 8px;
+            padding: 14px 16px;
+            background: var(--ink);
+            color: #ffffff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.06) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.5s;
+        }
+
+        .btn-submit:hover {
+            background: #1a1a1a;
+        }
+
+        .btn-submit:hover::after {
+            transform: translateX(100%);
+        }
+
+        .btn-submit:active {
+            transform: scale(0.985);
+        }
+
+        /* ── Error ── */
+        .error-msg {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 11px 14px;
+            background: #fff5f5;
+            border: 1px solid #fecaca;
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--danger);
+        }
+
+        .error-msg::before {
+            content: '!';
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1.5px solid var(--danger);
+            font-size: 10px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── Hint ── */
+        .hint {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 11px;
+            color: var(--ink-3);
+            letter-spacing: 0.02em;
+        }
+
+        .hint strong {
+            color: var(--ink-2);
+            font-weight: 500;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+<div class="shell">
+
+    <!-- ── Left ── -->
+    <div class="panel-left">
+        <div class="brand-mark">
+            <span>E<em>Commerce</em></span>
+        </div>
+
+        <div class="panel-copy">
+            <div class="deco-line"></div>
+            <h2>Your store,<br><em>your way.</em></h2>
+            <p>A clean, focused dashboard for everything you sell. Manage products, orders and customers without the noise.</p>
+        </div>
+
+        <div class="panel-footer">© 2025 ECommerce</div>
+    </div>
+
+    <!-- ── Right ── -->
+    <div class="panel-right">
+        <div class="form-card">
+            <h1>Sign in</h1>
+            <p class="subtitle">Enter your credentials to continue</p>
+
+            <form method="post">
+                <div class="field">
+                    <label>Username</label>
+                    <input asp-for="Username" placeholder="e.g. admin" autocomplete="username" />
+                </div>
+
+                <div class="field">
+                    <label>Password</label>
+                    <input asp-for="Password" type="password" placeholder="••••••••" autocomplete="current-password" />
+                </div>
+
+                <button type="submit" class="btn-submit">Continue</button>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="error-msg">@ViewBag.Error</div>
+            }
+
+            <p class="hint">
+                Demo — <strong>admin / 123</strong> &nbsp;·&nbsp; <strong>user / 123</strong>
+            </p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

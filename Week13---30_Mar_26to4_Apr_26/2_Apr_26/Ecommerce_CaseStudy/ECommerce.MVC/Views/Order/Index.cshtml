@@ -1,0 +1,328 @@
+@model List<Order>
+
+@{
+    ViewData["Title"] = "Orders";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    /* ── Page header ── */
+    .page-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
+
+    .page-header-left .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        margin-bottom: 10px;
+    }
+
+    .page-header-left .eyebrow::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: var(--accent);
+    }
+
+    .page-header-left h1 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 32px;
+        font-weight: 400;
+        color: var(--ink);
+        line-height: 1.15;
+    }
+
+    .page-header-left h1 em {
+        font-style: italic;
+        color: var(--accent);
+    }
+
+    /* ── Add button ── */
+    .btn-add {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 20px;
+        background: var(--ink);
+        color: #ffffff;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border-radius: 6px;
+        text-decoration: none;
+        white-space: nowrap;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-add::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.07) 50%, transparent 70%);
+        transform: translateX(-100%);
+        transition: transform 0.5s;
+    }
+
+    .btn-add:hover { background: #1a1a1a; color: #fff; }
+    .btn-add:hover::after { transform: translateX(100%); }
+    .btn-add:active { transform: scale(0.985); }
+    .btn-add svg { flex-shrink: 0; }
+
+    /* ── Table card ── */
+    .table-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    /* ── Table ── */
+    .orders-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .orders-table thead tr {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .orders-table th {
+        padding: 14px 20px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        text-align: left;
+        background: var(--paper);
+    }
+
+    .orders-table td {
+        padding: 16px 20px;
+        font-size: 14px;
+        color: var(--ink);
+        border-bottom: 1px solid var(--border);
+        vertical-align: middle;
+    }
+
+    .orders-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .orders-table tbody tr {
+        transition: background 0.12s;
+    }
+
+    .orders-table tbody tr:hover {
+        background: var(--paper);
+    }
+
+    /* ID badge */
+    .id-badge {
+        display: inline-block;
+        padding: 3px 9px;
+        background: var(--paper);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--ink-2);
+        letter-spacing: 0.03em;
+        font-family: 'DM Mono', 'Courier New', monospace;
+    }
+
+    /* user pill */
+    .user-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: var(--ink-2);
+    }
+
+    .user-pill svg {
+        color: var(--ink-3);
+        flex-shrink: 0;
+    }
+
+    /* date cell */
+    .date-cell {
+        font-size: 13px;
+        color: var(--ink-2);
+        white-space: nowrap;
+    }
+
+    .date-cell .date-main {
+        color: var(--ink);
+        font-weight: 400;
+    }
+
+    .date-cell .date-time {
+        font-size: 12px;
+        color: var(--ink-3);
+        margin-top: 2px;
+    }
+
+    /* ── Table footer ── */
+    .table-foot {
+        padding: 12px 20px;
+        border-top: 1px solid var(--border);
+        background: var(--paper);
+        font-size: 12px;
+        color: var(--ink-3);
+        letter-spacing: 0.02em;
+    }
+
+    /* ── Empty state ── */
+    .empty-state {
+        padding: 64px 24px;
+        text-align: center;
+    }
+
+    .empty-icon {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 20px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink-3);
+    }
+
+    .empty-state h3 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: var(--ink);
+        margin-bottom: 8px;
+    }
+
+    .empty-state p {
+        font-size: 13px;
+        color: var(--ink-2);
+        margin-bottom: 24px;
+    }
+
+    .btn-empty {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 11px 20px;
+        background: var(--ink);
+        color: #ffffff;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.2s;
+    }
+
+    .btn-empty:hover { background: #1a1a1a; color: #fff; }
+
+    /* ── Responsive ── */
+    @@media (max-width: 600px) {
+        .page-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .orders-table th:nth-child(3),
+        .orders-table td:nth-child(3) {
+            display: none;
+        }
+    }
+</style>
+
+<div class="page-header">
+    <div class="page-header-left">
+        <div class="eyebrow">Transactions</div>
+        <h1>All <em>orders</em></h1>
+    </div>
+    <a href="/Order/Create" class="btn-add">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M7 1v12M1 7h12"/>
+        </svg>
+        Place order
+    </a>
+</div>
+
+<div class="table-card">
+    @if (Model != null && Model.Any())
+    {
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>User</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td><span class="id-badge">#@order.Id</span></td>
+                        <td>
+                            <span class="user-pill">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                                @order.UserId
+                            </span>
+                        </td>
+                        <td>
+                            <div class="date-cell">
+                                <div class="date-main">@order.OrderDate.ToString("MMM dd, yyyy")</div>
+                                <div class="date-time">@order.OrderDate.ToString("HH:mm")</div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="table-foot">@Model.Count order@(Model.Count == 1 ? "" : "s") total</div>
+    }
+    else
+    {
+        <div class="empty-state">
+            <div class="empty-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                    <rect x="9" y="3" width="6" height="4" rx="1"/>
+                    <path d="M9 12h6M9 16h4"/>
+                </svg>
+            </div>
+            <h3>No orders yet</h3>
+            <p>Once orders are placed they'll appear here.</p>
+            <a href="/Order/Create" class="btn-empty">
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M7 1v12M1 7h12"/>
+                </svg>
+                Place first order
+            </a>
+        </div>
+    }
+</div>

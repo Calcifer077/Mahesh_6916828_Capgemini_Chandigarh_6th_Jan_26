@@ -1,0 +1,288 @@
+@{
+    ViewData["Title"] = "Place Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .page-wrap {
+        min-height: calc(100vh - 60px - 73px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 20px;
+    }
+
+    .form-card {
+        width: 100%;
+        max-width: 420px;
+        animation: fadeUp 0.4s ease both;
+    }
+
+    @@keyframes fadeUp {
+        from { opacity: 0; transform: translateY(14px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Header ── */
+    .form-header {
+        margin-bottom: 36px;
+    }
+
+    .form-header .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        margin-bottom: 12px;
+    }
+
+    .form-header .eyebrow::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: var(--accent);
+    }
+
+    .form-header h1 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 30px;
+        font-weight: 400;
+        color: var(--ink);
+        line-height: 1.2;
+    }
+
+    .form-header h1 em {
+        font-style: italic;
+        color: var(--accent);
+    }
+
+    .form-header p {
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 300;
+        color: var(--ink-2);
+        line-height: 1.6;
+    }
+
+    /* ── Divider ── */
+    .form-divider {
+        width: 100%;
+        height: 1px;
+        background: var(--border);
+        margin-bottom: 32px;
+    }
+
+    /* ── Fields ── */
+    .field {
+        margin-bottom: 20px;
+    }
+
+    .field label {
+        display: block;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-2);
+        margin-bottom: 8px;
+    }
+
+    .field-row {
+        position: relative;
+    }
+
+    .field-icon {
+        position: absolute;
+        left: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--ink-3);
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .field input {
+        width: 100%;
+        padding: 13px 16px 13px 42px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--surface);
+        font-family: 'DM Sans', sans-serif;
+        font-size: 14px;
+        color: var(--ink);
+        transition: border-color 0.2s, box-shadow 0.2s;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+    }
+
+    .field input::-webkit-outer-spin-button,
+    .field input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    .field input::placeholder { color: var(--ink-3); }
+
+    .field input:focus {
+        outline: none;
+        border-color: var(--ink);
+        box-shadow: 0 0 0 3px rgba(13, 13, 13, 0.06);
+    }
+
+    /* ── Info note ── */
+    .field-note {
+        margin-top: 7px;
+        font-size: 11px;
+        color: var(--ink-3);
+        letter-spacing: 0.01em;
+    }
+
+    /* ── Actions ── */
+    .form-actions {
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 14px 16px;
+        background: var(--ink);
+        color: #ffffff;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-primary::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.07) 50%, transparent 70%);
+        transform: translateX(-100%);
+        transition: transform 0.5s;
+    }
+
+    .btn-primary:hover { background: #1a1a1a; }
+    .btn-primary:hover::after { transform: translateX(100%); }
+    .btn-primary:active { transform: scale(0.985); }
+
+    .btn-ghost {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+        padding: 13px 16px;
+        background: transparent;
+        color: var(--ink-2);
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        text-decoration: none;
+        transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+
+    .btn-ghost:hover {
+        color: var(--ink);
+        border-color: var(--ink);
+        background: var(--paper);
+    }
+
+    .btn-ghost svg {
+        flex-shrink: 0;
+        transition: transform 0.2s;
+    }
+
+    .btn-ghost:hover svg { transform: translateX(-2px); }
+
+    /* ── Error ── */
+    .error-msg {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 16px;
+        padding: 11px 14px;
+        background: #fff5f5;
+        border: 1px solid #fecaca;
+        border-radius: 6px;
+        font-size: 13px;
+        color: #c0392b;
+    }
+
+    .error-msg::before {
+        content: '!';
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1.5px solid #c0392b;
+        font-size: 10px;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+</style>
+
+<div class="page-wrap">
+    <div class="form-card">
+
+        <div class="form-header">
+            <div class="eyebrow">Orders</div>
+            <h1>Place a new<br><em>order</em></h1>
+            <p>Enter a valid user ID to create an order on their behalf.</p>
+        </div>
+
+        <div class="form-divider"></div>
+
+        <form method="post">
+            <div class="field">
+                <label for="UserId">User ID</label>
+                <div class="field-row">
+                    <span class="field-icon">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </span>
+                    <input id="UserId" name="UserId" type="number" placeholder="e.g. 42" min="1" required />
+                </div>
+                <p class="field-note">The order will be assigned to this user account.</p>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-primary">Place order</button>
+                <a href="/Order/Index" class="btn-ghost">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 2L4 7l5 5"/>
+                    </svg>
+                    Back to orders
+                </a>
+            </div>
+        </form>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="error-msg">@ViewBag.Error</div>
+        }
+
+    </div>
+</div>

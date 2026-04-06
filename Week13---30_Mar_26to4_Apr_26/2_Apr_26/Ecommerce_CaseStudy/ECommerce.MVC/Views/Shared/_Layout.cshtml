@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — ECommerce</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ECommerce.MVC.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --ink:      #0d0d0d;
+            --ink-2:    #6b6b6b;
+            --ink-3:    #b0b0b0;
+            --paper:    #fafaf8;
+            --surface:  #ffffff;
+            --border:   #e8e8e4;
+            --accent:   #c9a96e;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── Navbar ── */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 0 40px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+        }
+
+        .nav-brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--ink);
+            text-decoration: none;
+            letter-spacing: 0.01em;
+            flex-shrink: 0;
+        }
+
+        .nav-brand em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--ink-2);
+            text-decoration: none;
+            border-radius: 6px;
+            letter-spacing: 0.02em;
+            transition: color 0.15s, background 0.15s;
+        }
+
+        .nav-links a:hover {
+            color: var(--ink);
+            background: var(--paper);
+        }
+
+        .nav-links a.active {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        /* hamburger */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--ink);
+            transition: transform 0.25s, opacity 0.25s;
+            transform-origin: center;
+        }
+
+        .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .nav-toggle.open span:nth-child(2) { opacity: 0; }
+        .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+        /* mobile drawer */
+        .nav-drawer {
+            display: none;
+            flex-direction: column;
+            gap: 2px;
+            padding: 12px 16px 16px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-drawer.open {
+            display: flex;
+        }
+
+        .nav-drawer a {
+            padding: 10px 12px;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--ink-2);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: color 0.15s, background 0.15s;
+        }
+
+        .nav-drawer a:hover {
+            color: var(--ink);
+            background: var(--paper);
+        }
+
+        /* ── Main ── */
+        .site-main {
+            flex: 1;
+            width: 100%;
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 48px 40px 64px;
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .site-footer p {
+            font-size: 12px;
+            color: var(--ink-3);
+            letter-spacing: 0.03em;
+        }
+
+        .site-footer a {
+            color: var(--ink-3);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .site-footer a:hover {
+            color: var(--ink);
+        }
+
+        .footer-dot {
+            display: inline-block;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--border);
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+
+        /* ── Responsive ── */
+        
+    </style>
+</head>
+<body>
+
+    <!-- ── Top nav ── -->
+    <header>
+        <nav class="site-nav">
+            <a class="nav-brand" asp-area="" asp-controller="Home" asp-action="Index">E<em>Commerce</em></a>
+
+            <ul class="nav-links">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <!-- Mobile drawer -->
+        <div class="nav-drawer" id="navDrawer">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </header>
+
+    <!-- ── Page content ── -->
+    <main class="site-main" role="main">
+        @RenderBody()
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+        <p>&copy; 2026 ECommerce<span class="footer-dot"></span><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        const toggle = document.getElementById('navToggle');
+        const drawer = document.getElementById('navDrawer');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('open');
+            drawer.classList.toggle('open');
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

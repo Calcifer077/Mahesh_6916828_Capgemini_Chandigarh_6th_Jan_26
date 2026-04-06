@@ -1,0 +1,222 @@
+@{
+    ViewData["Title"] = "Order Placed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .page-wrap {
+        min-height: calc(100vh - 60px - 73px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 20px;
+    }
+
+    .success-card {
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        animation: fadeUp 0.5s ease both;
+    }
+
+    @@keyframes fadeUp {
+        from { opacity: 0; transform: translateY(16px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Icon ── */
+    .success-icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 28px;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: var(--paper);
+        border: 1px solid var(--border);
+        position: relative;
+        animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s both;
+    }
+
+    @@keyframes popIn {
+        from { opacity: 0; transform: scale(0.7); }
+        to   { opacity: 1; transform: scale(1); }
+    }
+
+    /* animated check circle */
+    .check-circle {
+        width: 32px;
+        height: 32px;
+    }
+
+    .check-circle circle {
+        stroke: var(--accent);
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: drawCircle 0.5s ease 0.3s forwards;
+    }
+
+    .check-circle path {
+        stroke: var(--accent);
+        stroke-width: 2.2;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 30;
+        stroke-dashoffset: 30;
+        animation: drawCheck 0.35s ease 0.75s forwards;
+    }
+
+    @@keyframes drawCircle {
+        to { stroke-dashoffset: 0; }
+    }
+
+    @@keyframes drawCheck {
+        to { stroke-dashoffset: 0; }
+    }
+
+    /* ── Copy ── */
+    .success-eyebrow {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        margin-bottom: 10px;
+    }
+
+    .success-card h1 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 28px;
+        font-weight: 400;
+        color: var(--ink);
+        line-height: 1.2;
+        margin-bottom: 12px;
+    }
+
+    .success-card h1 em {
+        font-style: italic;
+        color: var(--accent);
+    }
+
+    .success-card p {
+        font-size: 13px;
+        font-weight: 300;
+        color: var(--ink-2);
+        line-height: 1.7;
+        margin-bottom: 36px;
+    }
+
+    /* ── Divider ── */
+    .form-divider {
+        width: 100%;
+        height: 1px;
+        background: var(--border);
+        margin-bottom: 28px;
+    }
+
+    /* ── Actions ── */
+    .actions {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-primary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        padding: 14px 16px;
+        background: var(--ink);
+        color: #ffffff;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        border-radius: 6px;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-primary::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.07) 50%, transparent 70%);
+        transform: translateX(-100%);
+        transition: transform 0.5s;
+    }
+
+    .btn-primary:hover { background: #1a1a1a; color: #fff; }
+    .btn-primary:hover::after { transform: translateX(100%); }
+    .btn-primary:active { transform: scale(0.985); }
+
+    .btn-ghost {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        width: 100%;
+        padding: 13px 16px;
+        background: transparent;
+        color: var(--ink-2);
+        font-family: 'DM Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        text-decoration: none;
+        transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+
+    .btn-ghost:hover {
+        color: var(--ink);
+        border-color: var(--ink);
+        background: var(--paper);
+    }
+</style>
+
+<div class="page-wrap">
+    <div class="success-card">
+
+        <div class="success-icon-wrap">
+            <svg class="check-circle" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="14"/>
+                <path d="M10 16.5l4.5 4.5 7.5-8"/>
+            </svg>
+        </div>
+
+        <p class="success-eyebrow">Order confirmed</p>
+        <h1>Your order was<br><em>placed successfully</em></h1>
+        <p>The order has been recorded and is now visible in your orders list. You can place another or review all existing orders below.</p>
+
+        <div class="form-divider"></div>
+
+        <div class="actions">
+            <a href="/Order/Index" class="btn-primary">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                    <rect x="9" y="3" width="6" height="4" rx="1"/>
+                    <path d="M9 12h6M9 16h4"/>
+                </svg>
+                View all orders
+            </a>
+            <a href="/Order/Create" class="btn-ghost">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M7 1v12M1 7h12"/>
+                </svg>
+                Place another order
+            </a>
+        </div>
+
+    </div>
+</div>
