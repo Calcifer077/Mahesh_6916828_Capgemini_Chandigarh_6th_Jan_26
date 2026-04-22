@@ -1,0 +1,25 @@
+@model List<BookStore.Web.Models.BookViewModel>
+@{
+    ViewData["Title"] = "Books";
+}
+<h2>Books</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Add Book</a>
+<table class="table">
+    <thead><tr><th>ID</th><th>Title</th><th>Price</th><th>Actions</th></tr></thead>
+    <tbody>
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td>@b.Id</td>
+            <td>@b.Title</td>
+            <td>@b.Price.ToString("C")</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@b.Id" class="btn btn-sm btn-warning">Edit</a>
+                <form asp-action="Delete" asp-route-id="@b.Id" method="post" style="display:inline">
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

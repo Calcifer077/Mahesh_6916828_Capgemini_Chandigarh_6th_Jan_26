@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ActiveDebugProfile>https</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\D-drive\My files\Capgegemini_CU_Sec3_.NetWithAzure_Mahesh\Week15---13_Apr_26to18_Apr_26\17_Apr_26\BookStore.Web\Properties\PublishProfiles\BookStoreMVC-Mahesh - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+</Project>
