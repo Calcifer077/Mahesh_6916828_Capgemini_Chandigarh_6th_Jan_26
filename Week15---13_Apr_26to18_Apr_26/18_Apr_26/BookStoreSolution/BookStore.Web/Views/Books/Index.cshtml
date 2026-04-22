@@ -1,0 +1,95 @@
+@using BookStore.Shared
+@model PaginatedResult<BookListItem>
+@{
+    ViewData["Title"] = "Books";
+}
+
+<div class="container py-4">
+
+    <!-- Header -->
+    <h5 class="mb-4 fw-semibold">Books</h5>
+
+    <!-- Search -->
+    <form method="get" class="mb-4">
+        <div class="input-group input-group-sm" style="max-width: 320px;">
+            <input type="text"
+                   name="search"
+                   value="@ViewBag.Search"
+                   class="form-control border-end-0"
+                   placeholder="Search by title or author..." />
+            <button type="submit" class="btn btn-outline-secondary">Search</button>
+        </div>
+    </form>
+
+    @if (Model != null && Model.Items.Any())
+    {
+        <!-- Grid -->
+        <div class="row g-3">
+
+            @foreach (var book in Model.Items)
+            {
+                <div class="col-md-3 col-sm-6">
+                    <div class="bg-light border rounded-2 p-3 h-100 d-flex flex-column">
+
+                        <!-- Title -->
+                        <div class="fw-medium mb-1">@book.Title</div>
+
+                        <!-- Author -->
+                        <div class="text-muted small mb-2">@book.AuthorName</div>
+
+                        <!-- Price -->
+                        <div class="fw-semibold mb-2">₹@book.Price</div>
+
+                        <!-- Meta -->
+                        <div class="text-muted small mb-3">
+                            @book.CategoryName · Stock: @book.Stock
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="mt-auto">
+                            <a asp-action="Details"
+                               asp-route-id="@book.BookId"
+                               class="btn btn-sm btn-outline-secondary me-1">
+                                View
+                            </a>
+
+                            <form asp-action="AddToCart"
+                                  method="post"
+                                  class="d-inline">
+                                <input type="hidden" name="bookId" value="@book.BookId" />
+                                <input type="hidden" name="title" value="@book.Title" />
+                                <input type="hidden" name="price" value="@book.Price" />
+                                <button type="submit"
+                                        class="btn btn-sm btn-outline-secondary">
+                                    Add
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            }
+
+        </div>
+
+        <!-- Pagination -->
+        <nav class="mt-4">
+            <ul class="pagination pagination-sm">
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                        <a class="page-link text-dark border"
+                           href="?page=@i&search=@ViewBag.Search">
+                            @i
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+    else
+    {
+        <div class="text-muted">No books found.</div>
+    }
+
+</div>

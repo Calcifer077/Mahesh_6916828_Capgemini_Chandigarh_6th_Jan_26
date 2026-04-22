@@ -1,0 +1,44 @@
+@model List<CategoryView>
+@{
+    ViewData["Title"] = "Manage Categories";
+}
+
+<div class="container py-4" style="max-width: 500px;">
+
+    <!-- Header -->
+    <h5 class="mb-4 fw-semibold">Categories</h5>
+
+    <!-- Add Category -->
+    <form asp-action="CreateCategory" method="post" class="mb-4">
+        <div class="input-group input-group-sm">
+            <input type="text"
+                   name="name"
+                   class="form-control border-end-0"
+                   placeholder="New category name"
+                   required />
+            <button type="submit" class="btn border">Add</button>
+        </div>
+    </form>
+
+    <!-- Table -->
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead class="border-bottom">
+                <tr class="small text-muted">
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr class="border-bottom">
+                        <td class="text-muted">@c.CategoryId</td>
+                        <td class="fw-medium">@c.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,0 +1,72 @@
+@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-6">
+
+            <div class="bg-light border rounded-2 p-4">
+
+                <!-- Title -->
+                <h5 class="mb-4 fw-semibold text-center">Create Account</h5>
+
+                <form asp-action="Register" method="post">
+
+                    <div asp-validation-summary="All" class="text-muted small mb-3"></div>
+
+                    <!-- Full Name -->
+                    <div class="mb-3">
+                        <label asp-for="FullName" class="form-label small text-muted"></label>
+                        <input asp-for="FullName" class="form-control form-control-sm" />
+                        <span asp-validation-for="FullName" class="text-muted small"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label small text-muted"></label>
+                        <input asp-for="Email" class="form-control form-control-sm" />
+                        <span asp-validation-for="Email" class="text-muted small"></span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label small text-muted"></label>
+                        <input asp-for="Password" type="password" class="form-control form-control-sm" />
+                        <span asp-validation-for="Password" class="text-muted small"></span>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="mb-4">
+                        <label asp-for="Phone" class="form-label small text-muted"></label>
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control form-control-sm" })
+                        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-muted small" })
+                    </div>
+
+                    <!-- Button -->
+                    <button type="submit" class="btn btn-outline-secondary w-100 btn-sm">
+                        Register
+                    </button>
+
+                </form>
+
+                <!-- Footer -->
+                <div class="text-center mt-3 small text-muted">
+                    Already have an account?
+                    <a asp-action="Login" class="text-dark text-decoration-none">
+                        Login
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

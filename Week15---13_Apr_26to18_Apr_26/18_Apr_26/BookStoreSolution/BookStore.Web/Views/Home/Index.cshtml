@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container py-5">
+
+    <div class="text-center" style="max-width: 600px; margin: 0 auto;">
+
+        <!-- Title -->
+        <h4 class="fw-semibold mb-3">BookStore</h4>
+
+        <!-- Subtitle -->
+        <p class="text-muted mb-4">
+            Browse thousands of books from India's top authors and publishers.
+        </p>
+
+        <!-- CTA -->
+        <a asp-controller="Books"
+           asp-action="Index"
+           class="btn btn-outline-secondary btn-sm px-4">
+            Browse Books
+        </a>
+
+    </div>
+
+</div>

@@ -1,0 +1,57 @@
+@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-6">
+
+            <div class="bg-light border rounded-2 p-4">
+
+                <!-- Title -->
+                <h5 class="mb-4 fw-semibold text-center">Login</h5>
+
+                <form asp-action="Login" method="post">
+
+                    <div asp-validation-summary="All" class="text-muted small mb-3"></div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label small text-muted"></label>
+                        <input asp-for="Email" class="form-control form-control-sm" />
+                        <span asp-validation-for="Email" class="text-muted small"></span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-4">
+                        <label asp-for="Password" class="form-label small text-muted"></label>
+                        <input asp-for="Password" type="password" class="form-control form-control-sm" />
+                        <span asp-validation-for="Password" class="text-muted small"></span>
+                    </div>
+
+                    <!-- Button -->
+                    <button type="submit" class="btn btn-outline-secondary w-100 btn-sm">
+                        Login
+                    </button>
+                </form>
+
+                <!-- Footer -->
+                <div class="text-center mt-3 small text-muted">
+                    Don't have an account?
+                    <a asp-action="Register" class="text-decoration-none text-dark">
+                        Register
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

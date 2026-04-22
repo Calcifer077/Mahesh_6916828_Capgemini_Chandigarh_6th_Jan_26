@@ -1,0 +1,57 @@
+@model BookListItem
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container py-4" style="max-width: 700px;">
+
+    <!-- Title -->
+    <h5 class="mb-4 fw-semibold">@Model.Title</h5>
+
+    <!-- Details -->
+    <div class="bg-light border rounded-2 p-3 mb-4">
+
+        <div class="row border-bottom py-2">
+            <div class="col-4 text-muted small">Author</div>
+            <div class="col-8">@Model.AuthorName</div>
+        </div>
+
+        <div class="row border-bottom py-2">
+            <div class="col-4 text-muted small">Category</div>
+            <div class="col-8">@Model.CategoryName</div>
+        </div>
+
+        <div class="row border-bottom py-2">
+            <div class="col-4 text-muted small">Publisher</div>
+            <div class="col-8">@Model.PublisherName</div>
+        </div>
+
+        <div class="row border-bottom py-2">
+            <div class="col-4 text-muted small">ISBN</div>
+            <div class="col-8">@Model.ISBN</div>
+        </div>
+
+        <div class="row border-bottom py-2">
+            <div class="col-4 text-muted small">Price</div>
+            <div class="col-8 fw-medium">₹@Model.Price</div>
+        </div>
+
+        <div class="row py-2">
+            <div class="col-4 text-muted small">In Stock</div>
+            <div class="col-8">@Model.Stock</div>
+        </div>
+
+    </div>
+
+    <!-- Action -->
+    <form asp-action="AddToCart" method="post">
+        <input type="hidden" name="bookId" value="@Model.BookId" />
+        <input type="hidden" name="title" value="@Model.Title" />
+        <input type="hidden" name="price" value="@Model.Price" />
+
+        <button type="submit" class="btn btn-outline-secondary btn-sm">
+            Add to Cart
+        </button>
+    </form>
+
+</div>

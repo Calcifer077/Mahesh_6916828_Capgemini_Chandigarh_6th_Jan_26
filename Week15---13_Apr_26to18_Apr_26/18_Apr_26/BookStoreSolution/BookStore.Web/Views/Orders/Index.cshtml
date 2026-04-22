@@ -1,0 +1,53 @@
+@model List<OrderView>
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<div class="container py-4" style="max-width: 800px;">
+
+    <!-- Header -->
+    <h5 class="mb-4 fw-semibold">My Orders</h5>
+
+    @if (Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table align-middle">
+                <thead class="border-bottom">
+                    <tr class="small text-muted">
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th class="text-end">Total</th>
+                        <th class="text-end">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model)
+                    {
+                        <tr class="border-bottom">
+                            <td class="text-muted">@order.OrderId</td>
+                            <td>@order.OrderDate.ToString("dd MMM yyyy")</td>
+                            <td class="text-end">₹@order.TotalAmount</td>
+                            <td class="text-end">
+                                <span class="px-2 py-1 border rounded small text-muted">
+                                    @order.Status
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="text-muted">
+            No orders yet.
+            <a asp-controller="Books"
+               asp-action="Index"
+               class="text-dark text-decoration-none">
+                Start shopping
+            </a>
+        </div>
+    }
+
+</div>

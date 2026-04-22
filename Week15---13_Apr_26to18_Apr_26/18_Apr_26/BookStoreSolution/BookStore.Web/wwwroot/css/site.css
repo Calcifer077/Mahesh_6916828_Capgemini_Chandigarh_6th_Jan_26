@@ -1,0 +1,6 @@
+body { padding-bottom: 40px; }
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: box-shadow 0.2s; }
+.navbar-brand { font-weight: bold; }
+.admin-sidebar { background: #343a40; min-height: calc(100vh - 56px); padding-top: 20px; }
+.admin-sidebar a { color: #adb5bd; display: block; padding: 10px 20px; text-decoration: none; }
+.admin-sidebar a:hover, .admin-sidebar a.active { color: #fff; background: #495057; }

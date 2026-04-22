@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container py-4">
+
+    <!-- Header -->
+    <h5 class="mb-4 fw-semibold text-dark">Dashboard</h5>
+
+    <!-- Grid -->
+    <div class="row g-3">
+
+        <div class="col-md-3 col-sm-6">
+            <div class="bg-light border rounded-2 p-3 h-100 d-flex flex-column justify-content-between">
+                <div class="text-dark fw-medium mb-3">Manage Books</div>
+                <a asp-action="Books" class="btn btn-sm btn-outline-secondary align-self-start">Open</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="bg-light border rounded-2 p-3 h-100 d-flex flex-column justify-content-between">
+                <div class="text-dark fw-medium mb-3">Manage Orders</div>
+                <a asp-action="Orders" class="btn btn-sm btn-outline-secondary align-self-start">Open</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="bg-light border rounded-2 p-3 h-100 d-flex flex-column justify-content-between">
+                <div class="text-dark fw-medium mb-3">Categories</div>
+                <a asp-action="Categories" class="btn btn-sm btn-outline-secondary align-self-start">Open</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="bg-light border rounded-2 p-3 h-100 d-flex flex-column justify-content-between">
+                <div class="text-dark fw-medium mb-3">Sales Report</div>
+                <a asp-action="Reports" class="btn btn-sm btn-outline-secondary align-self-start">Open</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
